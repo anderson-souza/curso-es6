@@ -1,32 +1,8 @@
-class List {
-    constructor() {
-        this.data = [];
-    }
-
-    add(data) {
-        this.data.push(data);
-        console.log(this.data);
-    }
+function soma(a = 0, b = 0) {
+    return a + b;
 }
 
+const somaArrow = (a = 0, b = 0) => a + b;
 
-class TodoList extends List {
-
-    constructor() {
-        super();
-        this.usuario = 'Anderson';
-    }
-
-    mostraUsuario() {
-        console.log(this.usuario);
-    }
-
-}
-
-var MinhaLista = new TodoList();
-
-document.getElementById('novoTodo').onclick = function () {
-    MinhaLista.add('Novo Todo');
-}
-
-MinhaLista.mostraUsuario();
+console.log(soma(1));
+console.log(somaArrow(2));
