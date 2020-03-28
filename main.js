@@ -1,32 +1,16 @@
-class List {
-    constructor() {
-        this.data = [];
-    }
+const arr = [1, 3, 4, 5, 6];
 
-    add(data) {
-        this.data.push(data);
-        console.log(this.data);
-    }
-}
+const newArr = arr.map(item => item * 2);
+
+console.log(newArr);
+
+const teste1 = () => [1, 2, 3];
+const teste2 = () => "Teste";
+const teste3 = () => 1;
+const teste4 = () => ({ nome: "Anderson" });
 
 
-class TodoList extends List {
-
-    constructor() {
-        super();
-        this.usuario = 'Anderson';
-    }
-
-    mostraUsuario() {
-        console.log(this.usuario);
-    }
-
-}
-
-var MinhaLista = new TodoList();
-
-document.getElementById('novoTodo').onclick = function () {
-    MinhaLista.add('Novo Todo');
-}
-
-MinhaLista.mostraUsuario();
+console.log(teste1());
+console.log(teste2());
+console.log(teste3());
+console.log(teste4());
