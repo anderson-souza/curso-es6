@@ -1,32 +1,20 @@
-class List {
-    constructor() {
-        this.data = [];
-    }
+const a = 5; //Variável não pode ser modificada
 
-    add(data) {
-        this.data.push(data);
-        console.log(this.data);
+// a = 3; //Erro pois a variável só pode ser lida
+
+//Mutação
+const usuario = { nome: 'Diego' };
+
+usuario.nome = "Creito";
+console.log(usuario);
+
+
+function teste(x) {
+    let y = 2;
+
+    if (x > 5) {
+        console.log(x, y);
     }
 }
 
-
-class TodoList extends List {
-
-    constructor() {
-        super();
-        this.usuario = 'Anderson';
-    }
-
-    mostraUsuario() {
-        console.log(this.usuario);
-    }
-
-}
-
-var MinhaLista = new TodoList();
-
-document.getElementById('novoTodo').onclick = function () {
-    MinhaLista.add('Novo Todo');
-}
-
-MinhaLista.mostraUsuario();
+teste(10);
