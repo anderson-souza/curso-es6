@@ -1,32 +1,46 @@
-class List {
-    constructor() {
-        this.data = [];
-    }
+// REST
+// Serve para pegar o resto das propriedades
 
-    add(data) {
-        this.data.push(data);
-        console.log(this.data);
-    }
+const usuario = {
+    nome: 'Anderson',
+    idade: 23,
+    empresa: 'Elotech'
 }
 
+const { nome, ...resto } = usuario;
+console.log(nome);
+console.log(resto);
 
-class TodoList extends List {
+//Também pode ser utilizado em Arrays
+const arr = [1, 2, 3, 4];
 
-    constructor() {
-        super();
-        this.usuario = 'Anderson';
-    }
+const [a, b, ...c] = arr;
+console.log(a)
+console.log(b)
+console.log(c)
 
-    mostraUsuario() {
-        console.log(this.usuario);
-    }
-
+//Pode ser utilizado em argumentos de funções
+function soma(...params) {
+    return params.reduce((total, next) => total + next);
 }
 
-var MinhaLista = new TodoList();
+console.log(soma(1, 2, 3));
 
-document.getElementById('novoTodo').onclick = function () {
-    MinhaLista.add('Novo Todo');
+
+// SPREAD OPERATOR
+// Propaga as informações de um objeto ou array para outra estrutura
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+
+const arr3 = [...arr1, ...arr2];
+console.log(arr3);
+
+// Também é capaz de copiar todas as informações e permitir que uma informação seja alterada
+const usuario1 = {
+    nome: 'Anderson',
+    idade: 23,
+    empresa: 'Elotech',
 }
 
-MinhaLista.mostraUsuario();
+const usuario2 = { ...usuario1, nome: 'Maria' };
+console.log(usuario2);
